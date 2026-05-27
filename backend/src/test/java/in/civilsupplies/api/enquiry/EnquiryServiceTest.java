@@ -19,6 +19,7 @@ class EnquiryServiceTest {
 
     @Mock EnquiryRepository repo;
     @Mock EmailService email;
+    @Mock in.civilsupplies.api.config.AppProperties props;
     @InjectMocks EnquiryService service;
 
     @Test
@@ -28,6 +29,9 @@ class EnquiryServiceTest {
                 "Hyderabad", "Commercial", List.of("Cement", "TMT Steel"),
                 "50 tons", "Need quote for slab"
         );
+        when(props.notification()).thenReturn(new in.civilsupplies.api.config.AppProperties.Notification(
+                "from@example.com", "to@example.com", "+91 9505056386"
+        ));
         when(repo.save(any(Enquiry.class))).thenAnswer(inv -> {
             Enquiry e = inv.getArgument(0);
             e.setId(101L);

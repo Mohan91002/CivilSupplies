@@ -25,7 +25,7 @@
 | Frontend | **Angular 17** (standalone components, signals) + TypeScript (strict) + Angular Material + CSS (Flexbox/Grid) |
 | Form handling | Angular `ReactiveFormsModule` with Material form fields |
 | HTTP client | `HttpClient` + RxJS, centralized in `core/services/api.service.ts`, base URL from `environments/*` |
-| Backend | **Spring Boot 3.2** (Java 17) + Spring MVC + Spring Data JPA / Hibernate |
+| Backend | **Spring Boot 3.2** (Java 21) + Spring MVC + Spring Data JPA / Hibernate |
 | Database | **H2** (in-memory) for dev profile, **PostgreSQL 16** for prod — Flyway migrations |
 | Auth | **JWT (HS256)** with access + refresh tokens, **RBAC** (`ROLE_ADMIN`, `ROLE_STAFF`, `ROLE_VIEWER`) via Spring Security |
 | Email | `JavaMailSender` over SMTP — works with Gmail app passwords, SendGrid, or AWS SES |

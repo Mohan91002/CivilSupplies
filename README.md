@@ -14,7 +14,7 @@ The product brief lives in [PROJECT_BRIEF.md](./PROJECT_BRIEF.md). The tech stac
 - Karma + Jasmine for tests
 
 **Backend**
-- Java 17 + Spring Boot 3.2
+- Java 21 + Spring Boot 3.2
 - Spring MVC (REST)
 - Spring Data JPA / Hibernate
 - Spring Security with JWT (HS256) + RBAC (`ROLE_ADMIN`, `ROLE_STAFF`, `ROLE_VIEWER`)

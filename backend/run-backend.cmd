@@ -1,9 +1,9 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-REM ---------- Resolve a working JDK (21 or 17 preferred, then 25) ----------
+REM ---------- Resolve a working JDK (21 preferred, then 25) ----------
 set "FOUND_JDK="
-for %%V in (21 17 25) do (
+for %%V in (21 25) do (
     if not defined FOUND_JDK (
         for %%P in (
             "C:\Program Files\Eclipse Adoptium\jdk-%%V"

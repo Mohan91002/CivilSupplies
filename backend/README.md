@@ -4,7 +4,7 @@ Spring Boot 3.2 REST API for the Civil Supplies B2B portal.
 
 ## Stack
 
-- **Java 17 + Spring Boot 3.2**
+- **Java 21 + Spring Boot 3.2**
 - **Spring MVC** (REST controllers)
 - **Spring Data JPA / Hibernate**
 - **PostgreSQL** (prod) / **H2** (dev)

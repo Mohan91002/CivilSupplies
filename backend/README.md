@@ -18,10 +18,11 @@ Spring Boot 3.2 REST API for the Civil Supplies B2B portal.
 ## Quick start (dev profile, H2 in-memory)
 
 ```bash
-./mvnw spring-boot:run
-# or
-mvn spring-boot:run -Dspring-boot.run.profiles=dev
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
+
+The default profile is `prod` (PostgreSQL). Pass `-Dspring-boot.run.profiles=dev`, or set
+`APP_PROFILE=dev`, to get the in-memory H2 setup described above.
 
 The default admin login is seeded on first run:
 

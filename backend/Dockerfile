@@ -17,6 +17,7 @@ COPY --from=build /app/target/civilsupplies-api.jar /app/app.jar
 
 ENV JAVA_OPTS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=70"
 ENV PORT=8080
+ENV APP_PROFILE=prod
 EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \

@@ -2,7 +2,7 @@ spring:
   application:
     name: civilsupplies-api
   profiles:
-    active: ${APP_PROFILE:dev}
+    active: ${APP_PROFILE:prod}
 
   datasource:
     url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/civilsupplies}

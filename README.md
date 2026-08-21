@@ -87,8 +87,10 @@ Default admin (dev only — change in production!):
 ## Quick start (local, without Docker)
 
 ```bash
-# Backend (uses H2 in dev profile)
-cd backend && mvn spring-boot:run
+# Backend — the dev profile must be requested explicitly (H2 in-memory).
+# The default profile is prod, so a bare `spring-boot:run` will look for
+# PostgreSQL and refuse to start without a real JWT_SECRET.
+cd backend && mvn spring-boot:run -Dspring-boot.run.profiles=dev
 
 # Frontend (separate terminal)
 cd frontend && npm install && npm start

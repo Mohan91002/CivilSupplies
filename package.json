@@ -1,0 +1,21 @@
+{
+  "name": "civil-supplies-workspace",
+  "version": "1.0.0",
+  "description": "Civil Supplies - Full-Stack Monorepo (Spring Boot + Angular)",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix frontend start",
+    "build": "npm --prefix frontend run build",
+    "build:frontend": "npm --prefix frontend run build",
+    "test": "npm --prefix frontend test",
+    "test:frontend": "npm --prefix frontend test",
+    "lint": "npm --prefix frontend run lint"
+  },
+  "keywords": [
+    "civil-supplies",
+    "angular",
+    "spring-boot",
+    "monorepo"
+  ],
+  "author": "Sudheer Bellam"
+}

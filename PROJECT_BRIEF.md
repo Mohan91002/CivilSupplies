@@ -31,7 +31,6 @@
 | Email | `JavaMailSender` over SMTP — works with Gmail app passwords, SendGrid, or AWS SES |
 | File uploads | Local disk in dev (`./uploads`), **AWS S3** in production (via `StorageService` interface) |
 | Rate limiting | Bucket4j on public endpoints (enquiries, quotes, newsletter) |
-| Caching | Spring Cache (in-process) + Redis-ready |
 | Deploy target | **AWS** — S3 + CloudFront for the Angular bundle (or Nginx container), ECS/Fargate or Elastic Beanstalk for the Spring Boot container, RDS PostgreSQL, SES, S3 for uploads |
 | Containerization | Docker (multi-stage) + docker-compose for local; same images deploy to AWS |
 

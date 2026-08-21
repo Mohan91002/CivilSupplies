@@ -1,0 +1,68 @@
+# Integration-test profile.
+#
+# Unlike the `test` profile, this one runs the REAL Flyway migrations and then asks
+# Hibernate to validate the entity mappings against the resulting schema. That is the
+# point: `test` uses ddl-auto: create-drop, where Hibernate builds the schema from the
+# entities and therefore can never detect drift between the entities and db/migration.
+spring:
+  datasource:
+    # DATABASE_TO_LOWER keeps unquoted identifiers lower-case as PostgreSQL does;
+    # without it H2 folds them to upper case and Hibernate reports every table missing.
+    url: jdbc:h2:mem:itdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  # Flyway 12 has no H2 module, so the migration files are applied directly as
+  # init scripts instead. Same SQL, same ordering -- what matters is that the
+  # schema Hibernate validates against is the one in db/migration, not one
+  # generated from the entities.
+  flyway:
+    enabled: false
+
+  # NOTE: structural migrations must be listed here, in order, when added.
+  sql:
+    init:
+      mode: always
+      schema-locations: >-
+        classpath:db/migration/V1__init_schema.sql,
+        classpath:db/migration/V3__add_audit_columns.sql
+      data-locations: classpath:db/migration/V2__seed_data.sql
+
+  mail:
+    host: localhost
+    port: 25
+
+  cache:
+    type: simple
+
+app:
+  jwt:
+    secret: this-is-a-32-byte-long-test-secret-for-jwt-signing-please
+    access-token-expiry-ms: 1800000
+    refresh-token-expiry-ms: 604800000
+  cors:
+    allowed-origins: http://localhost
+  mail:
+    from: it@civilsupplies.in
+    admin-notify-to: admin@civilsupplies.in
+  upload:
+    dir: ./build/it-uploads
+    storage-type: local
+
+management:
+  health:
+    # No SMTP server exists in tests, so the mail indicator would report DOWN and
+    # /actuator/health would answer 503 for reasons unrelated to the application.
+    mail:
+      enabled: false
+
+logging:
+  level:
+    org.springframework: WARN
+    com.civilsupplies: INFO

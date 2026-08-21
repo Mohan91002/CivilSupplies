@@ -11,11 +11,13 @@ spring:
     # with the public development signing key. Pass APP_PROFILE=dev for local work.
     active: ${APP_PROFILE:prod}
 
-  # Jackson — camelCase by default (matches Angular frontend DTOs)
+  # Jackson — camelCase by default (matches Angular frontend DTOs).
+  # Spring Boot 4 moved to Jackson 3, which dropped
+  # SerializationFeature.WRITE_DATES_AS_TIMESTAMPS and serialises java.time values as
+  # ISO-8601 by default. The old serialization.write-dates-as-timestamps: false entry
+  # is therefore both invalid (it fails property binding at startup) and redundant.
   jackson:
     default-property-inclusion: non_null
-    serialization:
-      write-dates-as-timestamps: false
 
   servlet:
     multipart:

@@ -7,7 +7,7 @@ The product brief lives in [PROJECT_BRIEF.md](./PROJECT_BRIEF.md). The tech stac
 ## Tech stack
 
 **Frontend**
-- Angular 17 (standalone components, signals, control-flow syntax)
+- Angular 21 (standalone components, signals, control-flow syntax)
 - TypeScript (strict mode)
 - Angular Material + responsive CSS (Flexbox / Grid)
 - RxJS for HTTP / async state
@@ -48,7 +48,7 @@ civil-supplies/
 │   ├── Dockerfile
 │   ├── pom.xml
 │   └── README.md
-├── frontend/                    Angular 17 SPA
+├── frontend/                    Angular 21 SPA
 │   ├── src/app/
 │   │   ├── core/                services, interceptors, guards, models
 │   │   ├── shared/              reusable UI components

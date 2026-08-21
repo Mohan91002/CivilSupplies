@@ -22,7 +22,7 @@
 
 | Layer | Choice |
 |---|---|
-| Frontend | **Angular 17** (standalone components, signals) + TypeScript (strict) + Angular Material + CSS (Flexbox/Grid) |
+| Frontend | **Angular 21** (standalone components, signals) + TypeScript (strict) + Angular Material + CSS (Flexbox/Grid) |
 | Form handling | Angular `ReactiveFormsModule` with Material form fields |
 | HTTP client | `HttpClient` + RxJS, centralized in `core/services/api.service.ts`, base URL from `environments/*` |
 | Backend | **Spring Boot 4.1** (Java 25) + Spring MVC + Spring Data JPA / Hibernate |

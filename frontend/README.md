@@ -1,10 +1,10 @@
 # Civil Supplies — Angular Frontend
 
-Angular 17 standalone-component application for the Civil Supplies B2B portal.
+Angular 21 standalone-component application for the Civil Supplies B2B portal.
 
 ## Stack
 
-- **Angular 17** (standalone components, signals, control-flow syntax)
+- **Angular 21** (standalone components, signals, control-flow syntax)
 - **TypeScript** (strict mode)
 - **Angular Material** + custom CSS (Flexbox / Grid)
 - **RxJS** for HTTP and async state

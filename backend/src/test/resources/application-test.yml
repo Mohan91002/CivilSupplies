@@ -39,4 +39,4 @@ app:
 logging:
   level:
     org.springframework: WARN
-    in.civilsupplies: INFO
+    com.civilsupplies: INFO

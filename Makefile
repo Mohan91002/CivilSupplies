@@ -3,7 +3,7 @@
 help:
 	@echo "Civil Supplies — common tasks"
 	@echo ""
-	@echo "  make up              Bring up the full stack (postgres + redis + backend + frontend)"
+	@echo "  make up              Bring up the full stack (postgres + backend + frontend)"
 	@echo "  make down            Tear down the stack"
 	@echo "  make logs            Tail container logs"
 	@echo "  make build           Build both frontend and backend artifacts"

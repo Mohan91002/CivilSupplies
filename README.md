@@ -60,7 +60,7 @@ civil-supplies/
 │   ├── nginx.conf
 │   ├── angular.json / package.json
 │   └── README.md
-├── docker-compose.yml           postgres + redis + backend + frontend
+├── docker-compose.yml           postgres + backend + frontend
 ├── Makefile                     up / down / test / lint / build / clean
 ├── .github/workflows/           ci.yml, docker-publish.yml
 ├── .env.example

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatIconModule } from '@angular/material/icon';
 import { RevealDirective } from '@shared/directives/reveal.directive';
 
@@ -11,12 +11,11 @@ export interface ComingSoonItem {
 }
 
 @Component({
-  selector: 'cs-coming-soon',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, RevealDirective],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './coming-soon.component.html',
-  styleUrls: ['./coming-soon.component.css'],
+    selector: 'cs-coming-soon',
+    imports: [MatIconModule, RevealDirective],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './coming-soon.component.html',
+    styleUrls: ['./coming-soon.component.css']
 })
 export class ComingSoonComponent {
   @Input({ required: true }) heading!: string;

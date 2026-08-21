@@ -11,11 +11,10 @@ import { Enquiry, EnquiryStatus, PageResponse } from '@core/models/domain.models
 import { NotificationService } from '@core/services/notification.service';
 
 @Component({
-  selector: 'cs-admin-enquiries',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatPaginatorModule, MatSelectModule, MatFormFieldModule, MatTableModule, DatePipe],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-admin-enquiries',
+    imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatPaginatorModule, MatSelectModule, MatFormFieldModule, MatTableModule, DatePipe],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <header class="page-head">
       <div>
         <h1>Enquiries</h1>
@@ -90,8 +89,8 @@ import { NotificationService } from '@core/services/notification.service';
       }
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .page-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
       .page-head h1 { margin: 0 0 0.25rem; }
       .page-head p { margin: 0; }
@@ -103,7 +102,7 @@ import { NotificationService } from '@core/services/notification.service';
       .row-select { width: 140px; }
       .empty { text-align: center; color: var(--color-text-muted); padding: 2rem 0; }
     `,
-  ],
+    ]
 })
 export class AdminEnquiriesComponent implements OnInit {
   private readonly api = inject(ApiService);

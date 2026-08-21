@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,10 +16,8 @@ import { ProductCardComponent } from '@shared/components/product-card/product-ca
 import { ComingSoonComponent, ComingSoonItem } from '@shared/components/coming-soon/coming-soon.component';
 
 @Component({
-  selector: 'cs-products',
-  standalone: true,
-  imports: [
-    CommonModule,
+    selector: 'cs-products',
+    imports: [
     RouterLink,
     ReactiveFormsModule,
     MatIconModule,
@@ -29,11 +27,11 @@ import { ComingSoonComponent, ComingSoonItem } from '@shared/components/coming-s
     MatFormFieldModule,
     MatInputModule,
     ProductCardComponent,
-    ComingSoonComponent,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'],
+    ComingSoonComponent
+],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
   private readonly api = inject(ApiService);

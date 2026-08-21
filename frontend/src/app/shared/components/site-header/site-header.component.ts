@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostBinding, HostListener, computed, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,12 +10,11 @@ import { WishlistService } from '@core/services/wishlist.service';
 import { ThemeService } from '@core/services/theme.service';
 
 @Component({
-  selector: 'cs-site-header',
-  standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, MatIconModule, MatButtonModule, MatBadgeModule, MatMenuModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './site-header.component.html',
-  styleUrls: ['./site-header.component.css'],
+    selector: 'cs-site-header',
+    imports: [RouterLink, RouterLinkActive, MatIconModule, MatButtonModule, MatBadgeModule, MatMenuModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './site-header.component.html',
+    styleUrls: ['./site-header.component.css']
 })
 export class SiteHeaderComponent {
   private readonly router = inject(Router);

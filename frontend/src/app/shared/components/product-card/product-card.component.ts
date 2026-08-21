@@ -6,13 +6,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { Product } from '@core/models/domain.models';
 import { WishlistService } from '@core/services/wishlist.service';
 
+import { Tilt3DDirective } from '@shared/directives';
+
 @Component({
-  selector: 'cs-product-card',
-  standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, MatButtonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css'],
+    selector: 'cs-product-card',
+    imports: [CommonModule, RouterLink, MatIconModule, MatButtonModule, Tilt3DDirective],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './product-card.component.html',
+    styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
   @Input({ required: true }) product!: Product;

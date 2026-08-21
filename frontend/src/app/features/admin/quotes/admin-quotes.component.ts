@@ -11,11 +11,10 @@ import { PageResponse, Quote, QuoteStatus } from '@core/models/domain.models';
 import { NotificationService } from '@core/services/notification.service';
 
 @Component({
-  selector: 'cs-admin-quotes',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatPaginatorModule, MatSelectModule, MatFormFieldModule, MatTableModule, DatePipe],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-admin-quotes',
+    imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatPaginatorModule, MatSelectModule, MatFormFieldModule, MatTableModule, DatePipe],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <header class="page-head">
       <div>
         <h1>Quote requests</h1>
@@ -103,8 +102,8 @@ import { NotificationService } from '@core/services/notification.service';
       }
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .page-head { display: flex; justify-content: space-between; align-items: end; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
       .status-filter { min-width: 220px; }
       .table-wrap { padding: 0; overflow-x: auto; }
@@ -115,7 +114,7 @@ import { NotificationService } from '@core/services/notification.service';
       .btn--sm { padding: 0.4rem 0.7rem; font-size: 0.85rem; }
       .empty { text-align: center; color: var(--color-text-muted); padding: 2rem 0; }
     `,
-  ],
+    ]
 })
 export class AdminQuotesComponent implements OnInit {
   private readonly api = inject(ApiService);

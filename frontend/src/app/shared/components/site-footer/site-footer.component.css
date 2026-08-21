@@ -1,14 +1,23 @@
 .site-footer {
-  background: var(--color-navy-900);
-  color: #d9e1f4;
-  padding: 3rem 0 1.5rem;
+  background: linear-gradient(160deg, #060d24 0%, #0d1f52 50%, #101f45 100%);
+  color: #c8d8f8;
+  padding: 4rem 0 2rem;
   margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad-orange);
 }
 .site-footer h3, .site-footer h4 { color: #fff; }
-.site-footer p { color: #b2bedb; margin-bottom: 1rem; }
-.site-footer a { color: #d9e1f4; }
-.site-footer a:hover { color: var(--color-orange); }
-.site-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.site-footer p { color: #9bb0d8; margin-bottom: 1rem; }
+.site-footer a { color: #c8d8f8; transition: color 0.15s ease; }
+.site-footer a:hover { color: var(--color-orange-light); }
+.site-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
 .site-footer mat-icon { vertical-align: middle; font-size: 1rem; width: 1rem; height: 1rem; }
 
 .footer-grid {
@@ -17,28 +26,31 @@
   gap: 2.5rem;
 }
 
-.footer-meta { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #b2bedb; }
+.footer-meta { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: #9bb0d8; }
 .footer-meta span { display: inline-flex; gap: 0.4rem; align-items: center; }
 
 .newsletter-form { display: flex; gap: 0.5rem; }
 .newsletter-form input {
   flex: 1;
-  padding: 0.6rem 0.8rem;
+  padding: 0.7rem 1rem;
   border-radius: var(--radius-sm);
-  border: 1px solid #34406b;
-  background: #1a2547;
+  border: 2px solid rgba(255, 107, 0, 0.25);
+  background: rgba(255,255,255,0.06);
   color: #fff;
+  outline: none;
+  transition: border-color 0.15s ease;
 }
-.newsletter-form input::placeholder { color: #8092bd; }
+.newsletter-form input::placeholder { color: #6a80a8; }
+.newsletter-form input:focus { border-color: var(--color-orange); }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #283360;
+  border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.85rem;
-  color: #8092bd;
+  color: #6a80a8;
 }
 
 @media (max-width: 768px) {

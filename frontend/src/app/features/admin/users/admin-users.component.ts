@@ -12,11 +12,10 @@ import { NotificationService } from '@core/services/notification.service';
 import { AuthService } from '@core/services/auth.service';
 
 @Component({
-  selector: 'cs-admin-users',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, MatSelectModule, DatePipe],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-admin-users',
+    imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, MatSelectModule, DatePipe],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <header class="page-head">
       <div>
         <h1>Admin users</h1>
@@ -90,8 +89,8 @@ import { AuthService } from '@core/services/auth.service';
       }
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .page-head h1 { margin: 0 0 0.25rem; }
       .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; align-items: start; }
       .table-wrap { padding: 0; overflow-x: auto; }
@@ -103,7 +102,7 @@ import { AuthService } from '@core/services/auth.service';
       .create-form mat-form-field { width: 100%; }
       @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
     `,
-  ],
+    ]
 })
 export class AdminUsersComponent implements OnInit {
   private readonly api = inject(ApiService);

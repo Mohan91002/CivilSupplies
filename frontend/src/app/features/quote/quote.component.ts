@@ -15,22 +15,21 @@ const MAX_BOQ_BYTES = 10 * 1024 * 1024; // 10MB
 const ALLOWED_TYPES = ['application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/csv', 'image/jpeg', 'image/png'];
 
 @Component({
-  selector: 'cs-quote',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    ReactiveFormsModule,
-    MatStepperModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.css'],
+    selector: 'cs-quote',
+    imports: [
+        CommonModule,
+        RouterLink,
+        ReactiveFormsModule,
+        MatStepperModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './quote.component.html',
+    styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent {
   private readonly fb = inject(FormBuilder);

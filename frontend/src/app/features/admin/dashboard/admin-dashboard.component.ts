@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { forkJoin, of } from 'rxjs';
@@ -8,11 +8,10 @@ import { ApiService } from '@core/services/api.service';
 import { Enquiry, PageResponse, Quote } from '@core/models/domain.models';
 
 @Component({
-  selector: 'cs-admin-dashboard',
-  standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-admin-dashboard',
+    imports: [RouterLink, MatIconModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <header class="page-head">
       <h1>Dashboard</h1>
       <p class="text-muted">Operational snapshot of enquiries, quotes, and pipeline status.</p>
@@ -77,8 +76,8 @@ import { Enquiry, PageResponse, Quote } from '@core/models/domain.models';
       </div>
     </section>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .page-head { margin-bottom: 1.25rem; }
       .page-head h1 { margin: 0 0 0.25rem; }
       .page-head p { margin: 0; }
@@ -101,7 +100,7 @@ import { Enquiry, PageResponse, Quote } from '@core/models/domain.models';
 
       @media (max-width: 900px) { .recent-grid { grid-template-columns: 1fr; } }
     `,
-  ],
+    ]
 })
 export class AdminDashboardComponent implements OnInit {
   private readonly api = inject(ApiService);

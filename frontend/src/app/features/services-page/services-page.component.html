@@ -9,12 +9,12 @@
       <a routerLink="/quote" class="btn btn--primary"><mat-icon>request_quote</mat-icon> Request a quote</a>
     </header>
 
-    <div class="services-grid">
+    <div class="services-grid cs-perspective">
       @for (s of services; track s.title; let i = $index) {
-        <article class="card service-card cs-tilt" csReveal="fade-up" [csRevealDelay]="i * 80">
-          <span class="service-icon"><mat-icon>{{ s.icon }}</mat-icon></span>
-          <h3>{{ s.title }}</h3>
-          <p>{{ s.text }}</p>
+        <article class="card service-card cs-preserve-3d" csTilt3D [maxTilt]="10" [scale]="1.03" csReveal="fade-up" [csRevealDelay]="i * 80">
+          <span class="service-icon cs-3d-z2"><mat-icon>{{ s.icon }}</mat-icon></span>
+          <h3 class="cs-3d-z1">{{ s.title }}</h3>
+          <p class="cs-3d-z1">{{ s.text }}</p>
         </article>
       }
     </div>

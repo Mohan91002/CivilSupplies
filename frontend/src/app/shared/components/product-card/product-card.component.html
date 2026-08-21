@@ -1,17 +1,17 @@
-<article class="product-card card cs-tilt">
-  <a [routerLink]="['/products', product.slug]" class="card-link">
-    <div class="card-image-wrap cs-zoom">
+<article class="product-card card cs-preserve-3d" csTilt3D [maxTilt]="8" [scale]="1.02">
+  <a [routerLink]="['/products', product.slug]" class="card-link cs-preserve-3d">
+    <div class="card-image-wrap cs-zoom cs-preserve-3d">
       <div
         class="card-image cs-zoom-target"
         [style.backgroundImage]="'url(' + (product.imageUrl || '/assets/images/placeholder.svg') + ')'"
       ></div>
       <span class="card-image-overlay"></span>
       @if (product.brand) {
-        <span class="badge badge--orange brand-pill">{{ product.brand }}</span>
+        <span class="badge badge--orange brand-pill cs-3d-z2">{{ product.brand }}</span>
       }
       <button
         mat-icon-button
-        class="wishlist-btn"
+        class="wishlist-btn cs-3d-z3"
         [class.is-active]="wishlist.has(product.id)"
         (click)="toggleWishlist($event)"
         [attr.aria-label]="wishlist.has(product.id) ? 'Remove from wishlist' : 'Add to wishlist'"
@@ -19,8 +19,8 @@
         <mat-icon>{{ wishlist.has(product.id) ? 'favorite' : 'favorite_border' }}</mat-icon>
       </button>
     </div>
-    <div class="card-body">
-      <h3 class="card-title">{{ product.name }}</h3>
+    <div class="card-body cs-preserve-3d">
+      <h3 class="card-title cs-3d-z1">{{ product.name }}</h3>
       @if (product.categoryName) {
         <span class="badge">{{ product.categoryName }}</span>
       }

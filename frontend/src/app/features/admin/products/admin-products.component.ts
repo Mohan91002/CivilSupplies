@@ -7,11 +7,10 @@ import { ApiService } from '@core/services/api.service';
 import { PageResponse, Product } from '@core/models/domain.models';
 
 @Component({
-  selector: 'cs-admin-products',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, MatTableModule, MatPaginatorModule, DatePipe],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-admin-products',
+    imports: [CommonModule, MatIconModule, MatTableModule, MatPaginatorModule, DatePipe],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <header class="page-head">
       <div>
         <h1>Products</h1>
@@ -65,8 +64,8 @@ import { PageResponse, Product } from '@core/models/domain.models';
       }
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .page-head { margin-bottom: 1.25rem; }
       .page-head h1 { margin: 0 0 0.25rem; }
       .table-wrap { padding: 0; overflow-x: auto; }
@@ -75,7 +74,7 @@ import { PageResponse, Product } from '@core/models/domain.models';
       .empty { text-align: center; color: var(--color-text-muted); padding: 2rem 0; }
       .badge { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
     `,
-  ],
+    ]
 })
 export class AdminProductsComponent implements OnInit {
   private readonly api = inject(ApiService);

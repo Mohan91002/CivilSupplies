@@ -27,38 +27,55 @@ import { environment } from '@env/environment';
         position: fixed;
         right: 1.25rem;
         bottom: 1.25rem;
-        width: 58px;
-        height: 58px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
-        background: #25d366;
+        background: linear-gradient(145deg, #2fe671 0%, #20b858 100%);
         color: #fff;
         display: grid;
         place-items: center;
-        box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+        box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45), inset 0 2px 2px rgba(255, 255, 255, 0.6);
         z-index: 90;
-        transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+        transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.35s ease, background 0.3s ease;
         animation: cs-pulse-ring 2.4s ease-out infinite;
+        transform-style: preserve-3d;
       }
       .fab::before {
         content: '';
         position: absolute;
         inset: -6px;
         border-radius: 50%;
-        border: 2px solid rgba(37, 211, 102, 0.4);
+        border: 2px solid rgba(37, 211, 102, 0.45);
         animation: cs-fab-ring 2.4s ease-out infinite;
       }
-      .fab:hover {
-        transform: scale(1.08) rotate(-4deg);
-        box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+      .fab::after {
+        content: '';
+        position: absolute;
+        top: 2px; left: 10px; right: 10px; height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, transparent 100%);
+        pointer-events: none;
       }
-      .fab svg { position: relative; z-index: 1; }
+      .fab:hover {
+        transform: translateY(-6px) scale(1.12) rotate(-8deg);
+        box-shadow: 0 20px 40px rgba(37, 211, 102, 0.6), 0 0 20px rgba(47, 230, 113, 0.4);
+      }
+      .fab svg {
+        position: relative;
+        z-index: 1;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+        transition: transform 0.3s ease;
+      }
+      .fab:hover svg {
+        transform: scale(1.08);
+      }
       @keyframes cs-fab-ring {
-        0%   { transform: scale(1);   opacity: 0.6; }
-        70%  { transform: scale(1.35); opacity: 0; }
-        100% { transform: scale(1.35); opacity: 0; }
+        0%   { transform: scale(1);   opacity: 0.7; }
+        70%  { transform: scale(1.4); opacity: 0; }
+        100% { transform: scale(1.4); opacity: 0; }
       }
       @media (max-width: 768px) {
-        .fab { right: 0.85rem; bottom: 0.85rem; }
+        .fab { right: 0.85rem; bottom: 0.85rem; width: 54px; height: 54px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .fab, .fab::before { animation: none; }

@@ -1,8 +1,17 @@
 export type EnquiryStatus = 'NEW' | 'CONTACTED' | 'CLOSED' | 'SPAM';
 export type QuoteStatus = 'NEW' | 'IN_REVIEW' | 'QUOTED' | 'WON' | 'LOST';
+export type Role = 'ROLE_ADMIN' | 'ROLE_STAFF' | 'ROLE_VIEWER';
 
-export interface Category {
+/**
+ * Base entity interface matching backend BaseEntity
+ */
+export interface BaseEntity {
   id: number;
+  createdAt: string;
+  updatedAt?: string | null;
+}
+
+export interface Category extends BaseEntity {
   name: string;
   slug: string;
   imageUrl: string | null;
@@ -10,8 +19,7 @@ export interface Category {
   productCount?: number;
 }
 
-export interface Product {
-  id: number;
+export interface Product extends BaseEntity {
   name: string;
   slug: string;
   categoryId: number;
@@ -23,7 +31,6 @@ export interface Product {
   isActive: boolean;
   rating?: number;
   reviewCount?: number;
-  createdAt: string;
 }
 
 export interface ProductFilter {
@@ -44,8 +51,14 @@ export interface PageResponse<T> {
   last: boolean;
 }
 
-export interface Enquiry {
-  id: number;
+export interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
+  timestamp: string;
+}
+
+export interface Enquiry extends BaseEntity {
   name: string;
   phone: string;
   email: string;
@@ -55,7 +68,6 @@ export interface Enquiry {
   quantity: string | null;
   message: string | null;
   status: EnquiryStatus;
-  createdAt: string;
 }
 
 export interface EnquiryCreate {
@@ -69,8 +81,7 @@ export interface EnquiryCreate {
   message?: string;
 }
 
-export interface Quote {
-  id: number;
+export interface Quote extends BaseEntity {
   name: string;
   phone: string;
   email: string;
@@ -80,7 +91,6 @@ export interface Quote {
   boqFilename: string | null;
   boqFileUrl: string | null;
   status: QuoteStatus;
-  createdAt: string;
 }
 
 export interface QuoteCreate {
@@ -92,14 +102,10 @@ export interface QuoteCreate {
   timeline?: string;
 }
 
-export type Role = 'ROLE_ADMIN' | 'ROLE_STAFF' | 'ROLE_VIEWER';
-
-export interface AdminUser {
-  id: number;
+export interface AdminUser extends BaseEntity {
   email: string;
   fullName: string | null;
   roles: Role[];
-  createdAt: string;
   active: boolean;
 }
 
@@ -123,3 +129,5 @@ export interface ApiError {
   timestamp?: string;
   fieldErrors?: Record<string, string>;
 }
+
+export type ErrorResponse = ApiError;

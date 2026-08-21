@@ -1,15 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '@core/services/auth.service';
 
 @Component({
-  selector: 'cs-admin-shell',
-  standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, RouterOutlet, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-admin-shell',
+    imports: [RouterLink, RouterLinkActive, RouterOutlet, MatIconModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <div class="admin-layout">
       <aside class="sidebar">
         <h2 class="sidebar-brand"><mat-icon>admin_panel_settings</mat-icon> Admin</h2>
@@ -31,8 +30,8 @@ import { AuthService } from '@core/services/auth.service';
       </section>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .admin-layout { display: grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - var(--header-height)); }
       .sidebar { background: var(--color-surface); border-right: 1px solid var(--color-border); padding: 1.5rem 1rem; display: flex; flex-direction: column; }
       .sidebar-brand { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--color-navy); margin: 0 0 1.5rem; font-family: var(--font-display); }
@@ -48,7 +47,7 @@ import { AuthService } from '@core/services/auth.service';
         .sidebar { display: none; }
       }
     `,
-  ],
+    ]
 })
 export class AdminShellComponent {
   readonly auth = inject(AuthService);

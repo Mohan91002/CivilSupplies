@@ -7,12 +7,11 @@ import { Product } from '@core/models/domain.models';
 import { WishlistService } from '@core/services/wishlist.service';
 
 @Component({
-  selector: 'cs-product-detail',
-  standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css'],
+    selector: 'cs-product-detail',
+    imports: [CommonModule, RouterLink, MatIconModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './product-detail.component.html',
+    styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);

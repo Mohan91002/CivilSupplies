@@ -1,17 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { ComingSoonComponent, ComingSoonItem } from '@shared/components/coming-soon/coming-soon.component';
 import { RevealDirective } from '@shared/directives/reveal.directive';
 
+import { Tilt3DDirective } from '@shared/directives';
+
 @Component({
-  selector: 'cs-services-page',
-  standalone: true,
-  imports: [CommonModule, RouterLink, MatIconModule, ComingSoonComponent, RevealDirective],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './services-page.component.html',
-  styleUrls: ['./services-page.component.css'],
+    selector: 'cs-services-page',
+    imports: [RouterLink, MatIconModule, ComingSoonComponent, RevealDirective, Tilt3DDirective],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './services-page.component.html',
+    styleUrls: ['./services-page.component.css']
 })
 export class ServicesPageComponent {
   readonly services = [

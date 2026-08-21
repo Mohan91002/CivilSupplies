@@ -64,20 +64,23 @@
       <h2>Browse by category</h2>
       <a routerLink="/products" class="link-arrow cs-link-anim">All products <mat-icon>arrow_forward</mat-icon></a>
     </header>
-    <div class="categories-grid">
+    <div class="categories-grid cs-perspective">
       @for (c of (categories$ | async) ?? []; track c.id; let i = $index) {
         <a
           [routerLink]="['/products']"
           [queryParams]="{ category: c.slug }"
-          class="category-card cs-tilt"
+          class="category-card cs-preserve-3d"
+          csTilt3D
+          [maxTilt]="12"
+          [scale]="1.04"
           csReveal="fade-up"
           [csRevealDelay]="i * 70"
         >
-          <span class="category-icon" aria-hidden="true">
+          <span class="category-icon cs-3d-z2" aria-hidden="true">
             <mat-icon>category</mat-icon>
           </span>
-          <strong>{{ c.name }}</strong>
-          @if (c.productCount != null) { <small>{{ c.productCount }} products</small> }
+          <strong class="cs-3d-z1">{{ c.name }}</strong>
+          @if (c.productCount != null) { <small class="cs-3d-z1">{{ c.productCount }} products</small> }
         </a>
       } @empty {
         <p class="text-muted">Categories will load when the backend is available.</p>
@@ -91,12 +94,12 @@
     <header class="section-header" csReveal="fade-up">
       <h2>Why builders choose us</h2>
     </header>
-    <div class="highlight-grid">
+    <div class="highlight-grid cs-perspective">
       @for (h of highlights; track h.title; let i = $index) {
-        <div class="card highlight-card cs-tilt" csReveal="fade-up" [csRevealDelay]="i * 100">
-          <span class="highlight-icon"><mat-icon>{{ h.icon }}</mat-icon></span>
-          <h3>{{ h.title }}</h3>
-          <p>{{ h.text }}</p>
+        <div class="card highlight-card cs-preserve-3d" csTilt3D [maxTilt]="10" [scale]="1.03" csReveal="fade-up" [csRevealDelay]="i * 100">
+          <span class="highlight-icon cs-3d-z2"><mat-icon>{{ h.icon }}</mat-icon></span>
+          <h3 class="cs-3d-z1">{{ h.title }}</h3>
+          <p class="cs-3d-z1">{{ h.text }}</p>
         </div>
       }
     </div>
@@ -109,7 +112,7 @@
       <h2>Recently added</h2>
       <a routerLink="/products" class="link-arrow cs-link-anim">See all <mat-icon>arrow_forward</mat-icon></a>
     </header>
-    <div class="product-grid">
+    <div class="product-grid cs-perspective">
       @for (p of (featured$ | async) ?? []; track p.id; let i = $index) {
         <div csReveal="fade-up" [csRevealDelay]="i * 80">
           <cs-product-card [product]="p" />
@@ -126,12 +129,12 @@
     <header class="section-header" csReveal="fade-up">
       <h2>What customers say</h2>
     </header>
-    <div class="testimonial-grid">
+    <div class="testimonial-grid cs-perspective">
       @for (t of testimonials; track t.name; let i = $index) {
-        <figure class="card cs-tilt" csReveal="fade-up" [csRevealDelay]="i * 120">
-          <span class="quote-mark" aria-hidden="true">"</span>
-          <blockquote>{{ t.quote }}</blockquote>
-          <figcaption>
+        <figure class="card cs-preserve-3d" csTilt3D [maxTilt]="8" [scale]="1.02" csReveal="fade-up" [csRevealDelay]="i * 120">
+          <span class="quote-mark cs-3d-z1" aria-hidden="true">"</span>
+          <blockquote class="cs-3d-z2">{{ t.quote }}</blockquote>
+          <figcaption class="cs-3d-z1">
             <strong>{{ t.name }}</strong>
             <small>{{ t.role }}</small>
           </figcaption>

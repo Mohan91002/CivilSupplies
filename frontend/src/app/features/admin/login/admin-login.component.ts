@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,12 +10,11 @@ import { AuthService } from '@core/services/auth.service';
 import { NotificationService } from '@core/services/notification.service';
 
 @Component({
-  selector: 'cs-admin-login',
-  standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.css'],
+    selector: 'cs-admin-login',
+    imports: [RouterLink, ReactiveFormsModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './admin-login.component.html',
+    styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent {
   private readonly fb = inject(FormBuilder);

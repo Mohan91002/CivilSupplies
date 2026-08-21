@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,12 +8,11 @@ import { NotificationService } from '@core/services/notification.service';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'cs-site-footer',
-  standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './site-footer.component.html',
-  styleUrls: ['./site-footer.component.css'],
+    selector: 'cs-site-footer',
+    imports: [RouterLink, ReactiveFormsModule, MatIconModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './site-footer.component.html',
+    styleUrls: ['./site-footer.component.css']
 })
 export class SiteFooterComponent {
   private readonly fb = inject(FormBuilder);

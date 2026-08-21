@@ -1,37 +1,77 @@
 .quote-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2.5rem; align-items: start; }
 
 .quote-info p { max-width: 480px; }
-.quote-steps { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 1rem; }
-.quote-steps li { padding: 1rem 1.1rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); display: flex; flex-direction: column; gap: 0.15rem; }
-.quote-steps strong { color: var(--color-navy); font-family: var(--font-display); }
+.quote-steps { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 1rem; counter-reset: steps; }
+.quote-steps li {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--grad-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-left: 4px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.quote-steps li:nth-child(1) { border-left-color: var(--color-orange); }
+.quote-steps li:nth-child(2) { border-left-color: var(--color-teal); }
+.quote-steps li:nth-child(3) { border-left-color: var(--color-violet); }
+.quote-steps li:hover { box-shadow: var(--shadow-md); }
+.quote-steps strong { color: var(--color-navy); font-family: var(--font-display); font-weight: 700; }
 .quote-steps span { color: var(--color-text-muted); font-size: 0.9rem; }
 
+.pledge-card { border-top: 4px solid var(--color-teal); }
 .pledge-card h3 { display: inline-flex; align-items: center; gap: 0.4rem; }
 .pledge-card ul { padding-left: 1.2rem; margin: 0.5rem 0 0; color: var(--color-text-muted); }
 
-.quote-form { padding: 1.75rem; }
+.quote-form {
+  padding: 2rem;
+  border-top: 4px solid var(--color-navy);
+  background: var(--grad-card);
+}
 .quote-form mat-form-field { width: 100%; margin-bottom: 0.75rem; }
-.step-actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+.step-actions { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1rem; }
 
 .upload-zone {
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
   border: 2px dashed var(--color-border);
   border-radius: var(--radius-md);
   text-align: center;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
-.upload-zone:hover { border-color: var(--color-orange); background: var(--color-surface); }
-.upload-zone.has-file { border-style: solid; padding: 1rem; text-align: left; background: var(--color-surface); }
-.upload-label { display: inline-flex; flex-direction: column; align-items: center; gap: 0.3rem; cursor: pointer; }
-.upload-label mat-icon { font-size: 2.5rem; width: 2.5rem; height: 2.5rem; color: var(--color-orange); }
+.upload-zone:hover {
+  border-color: var(--color-orange);
+  background: rgba(255, 107, 0, 0.04);
+  box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.08);
+}
+.upload-zone.has-file {
+  border-style: solid;
+  border-color: var(--color-teal);
+  padding: 1rem;
+  text-align: left;
+  background: rgba(0, 191, 166, 0.05);
+}
+.upload-label { display: inline-flex; flex-direction: column; align-items: center; gap: 0.4rem; cursor: pointer; }
+.upload-label mat-icon { font-size: 3rem; width: 3rem; height: 3rem; color: var(--color-orange); }
 .upload-label small { color: var(--color-text-muted); }
 
 .file-row { display: grid; grid-template-columns: auto 1fr auto; gap: 0.75rem; align-items: center; }
-.file-row mat-icon { color: var(--color-navy); }
+.file-row mat-icon { color: var(--color-teal); }
 .file-row small { color: var(--color-text-muted); }
 
-.success-state { text-align: center; padding: 2.5rem 1rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
-.success-state mat-icon { font-size: 4rem; width: 4rem; height: 4rem; color: var(--color-success); }
+.success-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+.success-state mat-icon {
+  font-size: 5rem; width: 5rem; height: 5rem;
+  color: var(--color-success);
+  filter: drop-shadow(0 4px 16px rgba(0, 200, 83, 0.4));
+}
 
 @media (max-width: 900px) {
   .quote-grid { grid-template-columns: 1fr; }

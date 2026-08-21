@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,12 +9,11 @@ import { ApiService } from '@core/services/api.service';
 import { NotificationService } from '@core/services/notification.service';
 
 @Component({
-  selector: 'cs-contact',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css'],
+    selector: 'cs-contact',
+    imports: [ReactiveFormsModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
   private readonly fb = inject(FormBuilder);

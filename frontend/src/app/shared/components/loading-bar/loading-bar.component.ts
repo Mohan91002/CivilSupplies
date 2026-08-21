@@ -1,19 +1,18 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { LoadingService } from '@core/services/loading.service';
 
 @Component({
-  selector: 'cs-loading-bar',
-  standalone: true,
-  imports: [CommonModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'cs-loading-bar',
+    imports: [],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     @if (loading.loading()) {
       <div class="bar" role="progressbar" aria-label="Loading"></div>
     }
   `,
-  styles: [
-    `
+    styles: [
+        `
       .bar {
         position: fixed;
         top: 0; left: 0; right: 0;
@@ -27,7 +26,7 @@ import { LoadingService } from '@core/services/loading.service';
         to { background-position: 200px 0; }
       }
     `,
-  ],
+    ]
 })
 export class LoadingBarComponent {
   readonly loading = inject(LoadingService);

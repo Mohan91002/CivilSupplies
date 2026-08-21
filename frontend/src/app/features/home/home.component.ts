@@ -10,20 +10,22 @@ import { ProductCardComponent } from '@shared/components/product-card/product-ca
 import { RevealDirective } from '@shared/directives/reveal.directive';
 import { CountUpDirective } from '@shared/directives/count-up.directive';
 
+import { Tilt3DDirective } from '@shared/directives';
+
 @Component({
-  selector: 'cs-home',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    MatIconModule,
-    ProductCardComponent,
-    RevealDirective,
-    CountUpDirective,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+    selector: 'cs-home',
+    imports: [
+        CommonModule,
+        RouterLink,
+        MatIconModule,
+        ProductCardComponent,
+        RevealDirective,
+        CountUpDirective,
+        Tilt3DDirective,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   private readonly api = inject(ApiService);

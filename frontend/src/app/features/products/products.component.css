@@ -4,9 +4,21 @@
   align-items: end;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
-.page-header h1 { margin: 0 0 0.25rem; }
+.page-header h1 {
+  margin: 0 0 0.25rem;
+  position: relative;
+  display: inline-block;
+}
+.page-header h1::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 56px; height: 4px;
+  border-radius: 2px;
+  background: var(--grad-orange);
+}
 .page-header p { margin: 0; max-width: 640px; }
 
 .filters {
@@ -17,19 +29,39 @@
 }
 @media (max-width: 600px) { .filters { grid-template-columns: 1fr; } }
 
-.category-chips { margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.category-chips { margin-bottom: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.category-chips .badge {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+  padding: 0.35rem 1rem;
+}
+.category-chips .badge:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+.category-chips .badge.active {
+  background: var(--grad-orange);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+}
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 1.75rem;
   margin-bottom: 2rem;
 }
 
 .empty-state {
   grid-column: 1 / -1;
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
   text-align: center;
 }
-.empty-state mat-icon { font-size: 3rem; width: 3rem; height: 3rem; color: var(--color-text-muted); margin-bottom: 0.5rem; }
-.empty-state a { color: var(--color-orange); cursor: pointer; text-decoration: underline; }
+.empty-state mat-icon {
+  font-size: 4rem; width: 4rem; height: 4rem;
+  color: var(--color-teal);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.empty-state a { color: var(--color-orange); cursor: pointer; text-decoration: underline; font-weight: 600; }

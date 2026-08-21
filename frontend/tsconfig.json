@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,22 +20,22 @@
     "useDefineForClassFields": false,
     "paths": {
       "@core": [
-        "src/app/core/index.ts"
+        "./src/app/core/index.ts"
       ],
       "@core/*": [
-        "src/app/core/*"
+        "./src/app/core/*"
       ],
       "@shared": [
-        "src/app/shared/index.ts"
+        "./src/app/shared/index.ts"
       ],
       "@shared/*": [
-        "src/app/shared/*"
+        "./src/app/shared/*"
       ],
       "@features/*": [
-        "src/app/features/*"
+        "./src/app/features/*"
       ],
       "@env/*": [
-        "src/environments/*"
+        "./src/environments/*"
       ]
     }
   },

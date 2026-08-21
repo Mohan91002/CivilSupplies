@@ -14,7 +14,7 @@ The product brief lives in [PROJECT_BRIEF.md](./PROJECT_BRIEF.md). The tech stac
 - Karma + Jasmine for tests
 
 **Backend**
-- Java 21 + Spring Boot 3.2
+- Java 25 + Spring Boot 4.1
 - Spring MVC (REST)
 - Spring Data JPA / Hibernate
 - Spring Security with JWT (HS256) + RBAC (`ROLE_ADMIN`, `ROLE_STAFF`, `ROLE_VIEWER`)
@@ -23,9 +23,9 @@ The product brief lives in [PROJECT_BRIEF.md](./PROJECT_BRIEF.md). The tech stac
 - JavaMailSender for email
 - JUnit 5 + Mockito + Spring Boot Test
 
-**Database**: PostgreSQL 16 (H2 in dev profile for fast local startup)
+**Database**: PostgreSQL 18 (H2 in dev profile for fast local startup)
 
-**DevOps**: Docker (multi-stage), docker-compose, Nginx reverse proxy, GitHub Actions CI/CD, Dependabot
+**DevOps**: Docker (multi-stage), docker-compose, Nginx reverse proxy, GitHub Actions CI/CD
 
 **Monitoring**: Spring Boot Actuator → Prometheus / Grafana
 
